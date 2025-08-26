@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quadro da Desonra — Quietômetro</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ajustes visuais específicos desta página */
+    .page{
+      max-width: 760px; margin: 0 auto; background: #fff; padding: 16px 18px; border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    }
+    .subtitle{color:#475569; margin-top:0}
+    .winner{
+      background: #fef2f2; border: 2px dashed #ef4444; border-radius: 12px; padding: 14px; margin: 10px 0 18px;
+    }
+    .winner .name{font-weight:900; font-size: 1.6rem; color:#991b1b;}
+    .list{list-style:none; padding:0; margin:0}
+    .list li{
+      display:flex; justify-content:space-between; padding:10px 12px; border-bottom:1px solid #e5e7eb; font-size:1.1rem;
+    }
+    .list li:last-child{border-bottom:0}
+    .toolbar{display:flex; gap:10px; justify-content:center; margin:14px 0 6px;}
+    .toolbar a, .toolbar button{
+      appearance:none; border:0; border-radius:10px; padding:10px 14px; cursor:pointer; font-weight:700; text-decoration:none;
+    }
+    .toolbar a{ background:#e5e7eb; color:#111827;}
+    .toolbar button{ background:#111827; color:#fff;}
+    @media print{
+      body{background:#fff; padding:0;}
+      .toolbar{display:none!important;}
+      .page{box-shadow:none; border:none;}
+      .winner{border: 2px solid #000;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>🏆 Quadro da Desonra</h1>
+    <p class="subtitle">Aluno(s) com mais ocorrências de barulho na aula</p>
+
+    <div id="winnerBox" class="winner" style="display:none">
+      <div>Mais barulhento:</div>
+      <div class="name" id="winnerName"></div>
+      <div class="count" id="winnerCount"></div>
+    </div>
+
+    <ul id="rankList" class="list"></ul>
+
+    <div class="toolbar">
+      <a href="index.html">⬅️ Voltar ao Quietômetro</a>
+      <button id="printBtn">🖨️ Imprimir</button>
+    </div>
+  </div>
+
+  <script src="desonra.js"></script>
+</body>
+</html>

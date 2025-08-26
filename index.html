@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quietômetro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🔇 Quietômetro</h1>
+
+  <div class="controls">
+    <label for="threshold">Nível de tolerância ao barulho:</label>
+    <input type="range" id="threshold" min="0" max="100" value="40" />
+    <span id="thresholdValue">40</span> dB
+  </div>
+
+  <button id="startButton">▶️ Iniciar Monitoramento</button>
+
+  <!-- Canvas do visualizador -->
+  <canvas id="visualizer" width="800" height="200"></canvas>
+
+  <!-- Aviso visual -->
+  <div id="alertBox">🚨 Muito barulho! 🚨</div>
+
+  <!-- Modal para registrar aluno (trava a tela) -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h2>🚨 Quem fez o barulho?</h2>
+      <input type="text" id="studentName" placeholder="Digite o nome do aluno" />
+      <button id="saveStudent">Registrar</button>
+    </div>
+  </div>
+
+  <!-- Quadro de alunos -->
+  <div id="studentBoard">
+    <h2>📋 Quadro de Barulho</h2>
+    <ul id="studentList"></ul>
+    <div class="board-actions">
+      <button id="clearBoard">Limpar Quadro</button>
+      <a class="secondary" href="desonra.html" id="openDishonor" rel="noopener">Abrir Quadro da Desonra</a>
+    </div>
+  </div>
+
+  <!-- Som do alarme -->
+  <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+
+  <footer>
+    <small>Permita o acesso ao microfone quando o navegador solicitar.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
